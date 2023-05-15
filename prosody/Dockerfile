@@ -16,7 +16,7 @@ RUN apt-dpkg-wrap apt-get update && \
     luarocks install lua-cjson 2.1.0-1 && \
     luarocks install net-url 0.9-1
 
-FROM ${JITSI_REPO}/base:${BASE_TAG}
+FROM jitsi/base:stable-8615
 
 LABEL org.opencontainers.image.title="Prosody IM"
 LABEL org.opencontainers.image.description="XMPP server used for signalling."

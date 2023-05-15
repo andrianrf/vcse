@@ -38,4 +38,4 @@ services:
         depends_on:
             - jicofo
         networks:
-            meet.jitsi:
+            meet.vcse:

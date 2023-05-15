@@ -6,7 +6,7 @@ LABEL org.opencontainers.image.url="https://hub.docker.com/repository/docker/and
 LABEL org.opencontainers.image.source="https://github.com/andrianrf/vcse/tree/master/jibri"
 LABEL org.opencontainers.image.documentation="https://github.com/andrianrf/vcse"
 
-ARG TARGETPLATFORM
+ARG TARGETPLATFORM=linux/x86_64
 ARG USE_CHROMIUM=0
 #ARG CHROME_RELEASE=latest
 #ARG CHROMEDRIVER_MAJOR_RELEASE=latest

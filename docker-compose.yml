@@ -3,7 +3,7 @@ version: '3.5'
 services:
     # Frontend
     web:
-        image: jitsi/web:${JITSI_IMAGE_VERSION:-unstable}
+        image: andrianrf/vcs-web:stable-8615
         restart: ${RESTART_POLICY:-unless-stopped}
         ports:
             - '${HTTP_PORT}:80'
@@ -153,11 +153,11 @@ services:
             - WHITEBOARD_ENABLED
             - WHITEBOARD_COLLAB_SERVER_PUBLIC_URL
         networks:
-            meet.jitsi:
+            meet.vcse:
 
     # XMPP server
     prosody:
-        image: jitsi/prosody:${JITSI_IMAGE_VERSION:-unstable}
+        image: andrianrf/vcs-prosody:stable-8615
         restart: ${RESTART_POLICY:-unless-stopped}
         expose:
             - '${XMPP_PORT:-5222}'
@@ -253,13 +253,13 @@ services:
             - XMPP_RECORDER_DOMAIN
             - XMPP_PORT
         networks:
-            meet.jitsi:
+            meet.vcse:
                 aliases:
-                    - ${XMPP_SERVER:-xmpp.meet.jitsi}
+                    - ${XMPP_SERVER:-xmpp.meet.vcse}
 
     # Focus component
     jicofo:
-        image: jitsi/jicofo:${JITSI_IMAGE_VERSION:-unstable}
+        image: andrianrf/vcs-vicofo:stable-8615
         restart: ${RESTART_POLICY:-unless-stopped}
         ports:
             - '127.0.0.1:${JICOFO_REST_PORT:-8888}:8888'
@@ -321,11 +321,11 @@ services:
         depends_on:
             - prosody
         networks:
-            meet.jitsi:
+            meet.vcse:
 
     # Video bridge
     jvb:
-        image: jitsi/jvb:${JITSI_IMAGE_VERSION:-unstable}
+        image: andrianrf/vcs-videobridge:stable-8615
         restart: ${RESTART_POLICY:-unless-stopped}
         ports:
             - '${JVB_PORT:-10000}:${JVB_PORT:-10000}/udp'
@@ -369,8 +369,8 @@ services:
         depends_on:
             - prosody
         networks:
-            meet.jitsi:
+            meet.vcse:
 
 # Custom network so all services can communicate using a FQDN
 networks:
-    meet.jitsi:
+    meet.vcse:

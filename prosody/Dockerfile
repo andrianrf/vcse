@@ -1,7 +1,4 @@
-ARG JITSI_REPO=jitsi
-ARG BASE_TAG=latest
-
-FROM ${JITSI_REPO}/base:${BASE_TAG} as builder
+FROM jitsi/base:stable-8615 as builder
 
 RUN apt-dpkg-wrap apt-get update && \
     apt-dpkg-wrap apt-get install -y \
@@ -23,9 +20,9 @@ FROM ${JITSI_REPO}/base:${BASE_TAG}
 
 LABEL org.opencontainers.image.title="Prosody IM"
 LABEL org.opencontainers.image.description="XMPP server used for signalling."
-LABEL org.opencontainers.image.url="https://prosody.im/"
-LABEL org.opencontainers.image.source="https://github.com/jitsi/docker-jitsi-meet"
-LABEL org.opencontainers.image.documentation="https://jitsi.github.io/handbook/"
+LABEL org.opencontainers.image.url="https://hub.docker.com/repository/docker/andrianrf/vcs-prosody/general"
+LABEL org.opencontainers.image.source="https://github.com/andrianrf/vcse/tree/master/prosody"
+LABEL org.opencontainers.image.documentation="https://github.com/andrianrf/vcse"
 
 ARG VERSION_MATRIX_USER_VERIFICATION_SERVICE_PLUGIN="1.8.0"
 

@@ -1,12 +1,10 @@
-ARG JITSI_REPO=jitsi
-ARG BASE_TAG=latest
-FROM ${JITSI_REPO}/base-java:${BASE_TAG}
+FROM jitsi/base-java:stable-8615
 
-LABEL org.opencontainers.image.title="Jitsi Broadcasting Infrastructure (jibri)"
+LABEL org.opencontainers.image.title="Video Broadcasting Infrastructure"
 LABEL org.opencontainers.image.description="Components for recording and/or streaming a conference."
-LABEL org.opencontainers.image.url="https://github.com/jitsi/jibri"
-LABEL org.opencontainers.image.source="https://github.com/jitsi/docker-jitsi-meet"
-LABEL org.opencontainers.image.documentation="https://jitsi.github.io/handbook/"
+LABEL org.opencontainers.image.url="https://hub.docker.com/repository/docker/andrianrf/vcs-broadcast/general"
+LABEL org.opencontainers.image.source="https://github.com/andrianrf/vcse/tree/master/jibri"
+LABEL org.opencontainers.image.documentation="https://github.com/andrianrf/vcse"
 
 ARG TARGETPLATFORM
 ARG USE_CHROMIUM=0

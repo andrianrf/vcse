@@ -1,12 +1,10 @@
-ARG JITSI_REPO=jitsi
-ARG BASE_TAG=latest
-FROM ${JITSI_REPO}/base:${BASE_TAG}
+FROM jitsi/base:stable-8615
 
-LABEL org.opencontainers.image.title="Jitsi Meet"
-LABEL org.opencontainers.image.description="WebRTC compatible JavaScript application that uses Jitsi Videobridge to provide high quality, scalable video conferences."
-LABEL org.opencontainers.image.url="https://jitsi.org/jitsi-meet/"
-LABEL org.opencontainers.image.source="https://github.com/jitsi/docker-jitsi-meet"
-LABEL org.opencontainers.image.documentation="https://jitsi.github.io/handbook/"
+LABEL org.opencontainers.image.title="VCS Web"
+LABEL org.opencontainers.image.description="VCS Web."
+LABEL org.opencontainers.image.url="https://hub.docker.com/repository/docker/andrianrf/vcs-web/general"
+LABEL org.opencontainers.image.source="https://github.com/andrianrf/vcse/tree/master/web"
+LABEL org.opencontainers.image.documentation="https://github.com/andrianrf/vcse"
 
 ADD https://raw.githubusercontent.com/acmesh-official/acme.sh/2.8.8/acme.sh /opt
 COPY rootfs/ /
